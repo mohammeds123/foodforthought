@@ -18,17 +18,63 @@
 
 USE foodforthought;
 
--- CREATE TABLE statements go below this line.
+-- CREATE TABLE statements for standalone tables (Tables without Foreign Keys)
 
 CREATE TABLE DONOR (
-    Donor_ID INT NOT NULL AUTO_INCREMENT,
+    Donor_ID INT PRIMARY KEY AUTO_INCREMENT,
     Donor_Name VARCHAR(100),
     Donor_Type VARCHAR(50),
     Email VARCHAR(100),
     Phone VARCHAR(15),
+);
 
+CREATE TABLE STAFF (
+    Staff_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Staff_Name VARCHAR(100),
+    Position VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(15),
+);
 
+CREATE TABLE VOLUNTEER (
+    Volunteer_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Volunteer_Name VARCHAR(100),
+    Start_Date DATE,
+    Email VARCHAR(100),
+    Phone VARCHAR(15),
+);
 
+CREATE TABLE HOUSEHOLD (
+    Household_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Contact_Name VARCHAR(100),
+    Phone VARCHAR(15),
+    Email VARCHAR(100),
+    -- Composite Attribute 'Address' split into separate fields: Street, City, and Postal_Code
+    Street VARCHAR(255),
+    City VARCHAR(100),
+    Postal_Code VARCHAR(10),
+    Registration_Date DATE,
+    Duplicate_Flag BOOLEAN,
+    Household_Size INT,
+);
+
+CREATE TABLE FOOD_ITEM (
+    Item_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Item_Name VARCHAR(100),
+    Food_Category VARCHAR(50),
+    Storage_Type VARCHAR(50),
+    Low_Stock_Threshold INT,
+);
+
+CREATE TABLE STORAGE_LOCATION (
+    Location_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Location_Name VARCHAR(100),
+    Storage_Type VARCHAR(50),
+);
+
+CREATE TABLE DIETARY_NEED (
+    Need_Name VARCHAR(50) PRIMARY KEY,
+    Need_Type VARCHAR(50),
 );
 
 CREATE TABLE DONATION (
@@ -38,4 +84,5 @@ CREATE TABLE DONATION (
     Fund_Amount DECIMAL(10, 2),
     Donor_ID INT,
     FOREIGN KEY (Donor_ID) REFERENCES DONOR(Donor_ID) ON UPDATE CASCADE ON DELETE SET NULL
-)
+);
+
