@@ -1,0 +1,36 @@
+{
+  "sqltools.useNodeRuntime": true,
+  "sqltools.autoConnectTo": ["FoodForThought"],
+  "sqltools.connections": [
+    {
+      "name": "FoodForThought",
+      "driver": "MySQL",
+      "server": "127.0.0.1",
+      "port": 33060,
+      "database": "foodforthought",
+      "username": "root",
+      "password": "",
+      "askForPassword": false,
+      "connectionTimeout": 30,
+      "previewLimit": 50,
+      "mysqlOptions": {
+        "authProtocol": "xprotocol"
+      }
+    },
+    {
+      "name": "FoodForThought (app user)",
+      "driver": "MySQL",
+      "server": "127.0.0.1",
+      "port": 33060,
+      "database": "foodforthought",
+      "username": "fft_app",
+      "password": "change-me",
+      "askForPassword": false,
+      "connectionTimeout": 30,
+      "previewLimit": 50,
+      "mysqlOptions": {
+        "authProtocol": "xprotocol"
+      }
+    }
+  ]
+}
