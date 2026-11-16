@@ -20,7 +20,16 @@ app.get('/api/health', async (req, res) => {
   res.status(200).json({ ok: true });
 });
 
-// Mount routes under /api later, for example:
+// When a route file is uncommented and exports a router, mount it here:
+// import authRouter from './routes/auth.js';
+// import donationsRouter from './routes/donations.js';
+// import inventoryRouter from './routes/inventory.js';
+// import householdsRouter from './routes/households.js';
+// import hampersRouter from './routes/hampers.js';
+// import fulfillmentsRouter from './routes/fulfillments.js';
+// import volunteersRouter from './routes/volunteers.js';
+// import shiftsRouter from './routes/shifts.js';
+// import lookupsRouter from './routes/lookups.js';
 // app.use('/api/auth', authRouter);
 // app.use('/api/donations', donationsRouter);
 // app.use('/api/inventory', inventoryRouter);

@@ -1,9 +1,9 @@
 -- FoodForThought: one-time local MySQL setup (run as root).
--- In VS Code / Cursor: open this file, pick the "FoodForThought" SQLTools
--- connection (root), then Run on Active Connection.
+-- Paste CREATE DATABASE into the Progress Report 3 DDL section as well.
 --
--- After this script, run 01_schema.sql, 02_procedures.sql, 03_events.sql,
--- then 04_seed.sql, in that order.
+-- Order: 00_create_database.sql → 01_schema.sql → 02_procedures.sql
+--        → 03_events.sql → 04_seed.sql
+-- SQLTools: connection "FoodForThought" (root, 127.0.0.1:33060, xprotocol).
 
 CREATE DATABASE IF NOT EXISTS foodforthought;
 
